@@ -4,7 +4,7 @@ export default function add(numbers: string) {
   const customDelimiter = potentialDelimiter.includes("//")
     ? potentialDelimiter[2]
     : "";
-  const delimiters = new Set([",", "\n", customDelimiter, "/"]);
+  const delimiters = new Set([",", "\n", customDelimiter, "/", " "]);
   let counter = 0;
   let total = 0;
   let currentNumber = "";
