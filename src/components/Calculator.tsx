@@ -4,12 +4,15 @@ import add from "../utils/add";
 const CalculatorUI: React.FC = () => {
   const [input, setInput] = useState("");
   const [total, setTotal] = useState<number | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const handleCalculate = () => {
     try {
+      setError(null);
       setTotal(add(input));
     } catch (e) {
       setTotal(null);
+      setError(e instanceof Error ? e.message : "Error");
     }
   };
 
@@ -22,6 +25,7 @@ const CalculatorUI: React.FC = () => {
       />
       <button onClick={handleCalculate}>Calculate</button>
       {total !== null && <p>Result: {total}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 };

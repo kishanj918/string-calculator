@@ -25,4 +25,14 @@ describe("renders calculator and adds numbers", () => {
     fireEvent.click(button);
     expect(screen.getByText("Result: 6")).toBeInTheDocument();
   });
+  test("displays warning for negative numbers", () => {
+    render(<Calculator />);
+    const input = screen.getByPlaceholderText("Enter numbers...");
+    const button = screen.getByText("Calculate");
+    fireEvent.change(input, { target: { value: "-1,-2,3" } });
+    fireEvent.click(button);
+    expect(
+      screen.getByText("negative numbers not allowed -1,-2")
+    ).toBeInTheDocument();
+  });
 });
