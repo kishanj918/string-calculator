@@ -1,7 +1,7 @@
 export default function add(numbers: string): number {
   if (numbers.length === 0) return 0;
 
-  const delimiters = new Set([","]);
+  const delimiters = new Set([",", "\n"]);
   let counter = 0;
   let total = 0;
   let currentNumber = "";
