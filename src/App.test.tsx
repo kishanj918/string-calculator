@@ -12,4 +12,7 @@ describe("String Calculator", () => {
   it("handles newline", () => {
     expect(add("1\n2,3")).toBe(6);
   });
+  it("handles custom delimiter", () => {
+    expect(add("//;1;2")).toBe(3);
+  });
 });
