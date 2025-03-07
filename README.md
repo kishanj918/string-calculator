@@ -29,15 +29,6 @@ This project demonstrates a **Test-Driven Development (TDD)** approach to buildi
 
 ---
 
-## Project Setup
-
-### 1. Clone Repository
-
-```bash
-git clone https://github.com/your-username/incubyte-string-calculator.git
-cd incubyte-string-calculator
-```
-
 ## Demo
 
 https://kishanj918.github.io/string-calculator/
