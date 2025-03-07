@@ -1,10 +1,18 @@
 export default function add(numbers: string) {
   if (numbers.length === 0) return 0;
-  const potentialDelimiter = numbers.slice(0, 3);
-  const customDelimiter = potentialDelimiter.includes("//")
-    ? potentialDelimiter[2]
-    : "";
-  const delimiters = new Set([",", "\n", customDelimiter, "/", " "]);
+  const acceptedChars = new Set([
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "-",
+  ]);
   let counter = 0;
   let total = 0;
   let currentNumber = "";
@@ -13,7 +21,7 @@ export default function add(numbers: string) {
   while (counter < numbers.length) {
     const char = numbers[counter];
 
-    if (delimiters.has(char)) {
+    if (!acceptedChars.has(char)) {
       if (currentNumber !== "") {
         const number = Number(currentNumber);
 

@@ -20,4 +20,7 @@ describe("String Calculator", () => {
       "negative numbers not allowed -2,-4"
     );
   });
+  it("handles multiple delimiters with any length", () => {
+    expect(add("//[***][%%]\n1***2%%3")).toBe(6);
+  });
 });
